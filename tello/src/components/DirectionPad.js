@@ -3,11 +3,6 @@ import FlightButton from './FlightButton';
 
 
 class DirectionPad extends Component {
-    constructor(props) {
-        super(props);
-
-
-    }
     render() {
         return(
             <div className="Direction-Pad">

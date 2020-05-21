@@ -23,8 +23,6 @@ tello.on("error", function (err) {
         address.address + ":" + address.port);
   });
   
-  let message = Buffer.from("command");
-
   tello.bind(PORT);
 
 // receive telloState by sending "command"
@@ -61,9 +59,5 @@ const flightCommand = (command) => {
   let comm = Buffer.from(command);
   tello.send(comm, PORT, HOST, handleErrror);
 }
-
-
-
-
 
 exports.flightCommand = flightCommand;

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import FlightButton from './FlightButton';
 import axios from 'axios';
+import DirectionPad from './DirectionPad';
 
 
 class FlightController extends Component {
@@ -30,6 +31,7 @@ class FlightController extends Component {
                 <h1>Flight Controls</h1>
                 <FlightButton flightCommand={this.flightCommand} command="command"/>
                 <FlightButton flightCommand={this.flightCommand} command="battery?"/>
+                <DirectionPad flightCommand={this.flightCommand}/>
             </div>
         );
     }

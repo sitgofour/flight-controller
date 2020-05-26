@@ -1,3 +1,27 @@
-DirectionPad {
+.DirectionPad {
     background-color: blueviolet;
+}
+
+.Directions {
+    background-color: rgb(255, 127, 217);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 2em;
+}
+
+.elevators {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.ForwardBackDirection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rotators {
+    display: flex;
+    justify-content: space-evenly;
 }

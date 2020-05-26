@@ -1,10 +1,10 @@
 import React from 'react';
-import './App.css';
+import styles from './styles/app.module.css';
 import FlightController from './components/FlightController';
 
 function App() {
   return (
-    <div className="App">
+    <div className={styles.App}>
     <h1>Tello Flight Controller</h1>
     <FlightController />
     </div>

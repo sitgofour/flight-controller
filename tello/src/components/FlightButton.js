@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import styles from '../styles/flightbutton.module.css';
 
 class FlightButton extends Component {
     constructor(props) {
@@ -14,8 +14,7 @@ class FlightButton extends Component {
 
     render() {
         return (
-            <div className="Flight-Button">
-                <h3>{this.props.command}</h3>
+            <div className={styles.FlightButton}>
                 <button onClick={this.handleClick}>{this.props.command}</button>
             </div>
         )

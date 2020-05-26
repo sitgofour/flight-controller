@@ -36,6 +36,7 @@ class FlightController extends Component {
                 <TakeOffLand flightCommand={this.flightCommand} />
                 <FlipPad flightCommand={this.flightCommand} />
                 <DirectionPad flightCommand={this.flightCommand} />
+                <FlightButton flightCommand={this.flightCommand} command="emergency" />
             </div>
         );
     }

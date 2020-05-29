@@ -15,7 +15,9 @@ class FlightButton extends Component {
     render() {
         return (
             <div className={styles.FlightButton}>
-                <button onClick={this.handleClick}>{this.props.command}</button>
+                <button onClick={this.handleClick}>
+                    {this.props.buttonText ? this.props.buttonText : this.props.command}
+                </button>
             </div>
         )
     }

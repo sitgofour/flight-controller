@@ -1,0 +1,14 @@
+.FlipPad {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1em;
+    padding: 1em;
+    background-color: orange;
+}
+
+.forwardBack {
+    display: flex;
+    flex-direction: column;
+}
+

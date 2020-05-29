@@ -1,0 +1,16 @@
+.FlightController {
+    background-color: navy;
+}
+
+.Emergency {
+    display: flex;
+    justify-content: center;
+    background-color: red;
+    min-width: 400px;
+}
+
+.FlightStatus {
+    display: flex;
+    justify-content: center;
+    background-color: greenyellow;    
+}

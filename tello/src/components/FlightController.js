@@ -4,6 +4,7 @@ import axios from 'axios';
 import DirectionPad from './DirectionPad';
 import FlipPad from './FlipPad';
 import TakeOffLand from './TakeOffLand';
+import styles from '../styles/flightController.module.css';
 
 
 class FlightController extends Component {
@@ -29,14 +30,17 @@ class FlightController extends Component {
 
     render() {
         return (
-            <div className = "FlightController">
+            <div className={styles.FlightController}>
                 <h1>Flight Controls</h1>
-                <FlightButton flightCommand={this.flightCommand} command="command" />
-                <FlightButton flightCommand={this.flightCommand} command="battery?" />
+                <div className={styles.FlightStatus}>
+                    <FlightButton flightCommand={this.flightCommand} command="command" buttonText="Flight Status?"/>
+                </div>
                 <TakeOffLand flightCommand={this.flightCommand} />
                 <FlipPad flightCommand={this.flightCommand} />
                 <DirectionPad flightCommand={this.flightCommand} />
-                <FlightButton flightCommand={this.flightCommand} command="emergency" />
+                <div className={styles.Emergency}>
+                    <FlightButton className={styles.Emergency} flightCommand={this.flightCommand} command="emergency" />
+                </div>
             </div>
         );
     }

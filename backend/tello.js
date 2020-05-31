@@ -25,27 +25,6 @@ tello.on("error", function (err) {
   
   tello.bind(PORT);
 
-// receive telloState by sending "command"
-// const telloState = dgram.createSocket('udp4');
-
-// telloState.on("error", function (err) {
-//     console.log("server error:\n" + err.stack);
-//     telloState.close();
-//   });
-  
-//   telloState.on("message", function (msg, rinfo) {
-//     console.log("server got: " + msg + " from TelloState" +
-//       rinfo.address + ":" + rinfo.port);
-//   });
-  
-//   telloState.on("listening", function () {
-//     var address = telloState.address();
-//     console.log("server listening " +
-//         address.address + ":" + address.port);
-//   });
-  
-// telloState.bind(8890);
-
 
 // command functions
 
@@ -61,3 +40,62 @@ const flightCommand = (command) => {
 }
 
 exports.flightCommand = flightCommand;
+
+
+
+
+// state streams
+
+const telloState = dgram.createSocket('udp4');
+
+telloState.on("error", function (err) {
+    console.log("server error:\n" + err.stack);
+    telloState.close();
+});
+
+telloState.on("message", function (msg, rinfo) {
+    console.log("server got: " + msg + " from TelloState" + rinfo.address + ":" + rinfo.port);
+});
+
+telloState.on("listening", function () {
+    var address = telloState.address();
+    console.log("server listening " + address.address + ":" + address.port);
+});
+
+telloState.bind(8890);
+
+
+const telloVideoStream = dgram.createSocket('udp4');
+
+telloVideoStream.on("error", function (err) {
+    console.log("server error:\n" + err.stack);
+    telloState.close();
+});
+
+telloVideoStream.on("message", function (msg, rinfo) {
+    console.log("server got: " + msg + " from TelloState" + rinfo.address + ":" + rinfo.port);
+});
+
+telloVideoStream.on("listening", function () {
+    var address = telloVideoStream.address();
+    console.log("server listening " + address.address + ":" + address.port);
+});
+
+telloVideoStream.bind(11111);
+
+
+function timeoutCommand() {
+  flightCommand("command");
+}
+
+function timeoutStream() {
+  flightCommand("streamon");
+}
+
+
+setTimeout(timeoutCommand, 5000);
+setTimeout(timeoutStream, 10000);
+
+
+
+

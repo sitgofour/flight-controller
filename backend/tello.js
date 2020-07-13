@@ -8,6 +8,7 @@ const PORT = 8889;
 const tello = dgram.createSocket('udp4');
 
 
+
 tello.on("error", function (err) {
     console.log("server error:\n" + err.stack);
     tello.close();
@@ -87,6 +88,22 @@ telloState.bind(8890);
 // });
 
 // telloVideoStream.bind(11111);
+
+
+
+
+/* ****************************************************** */
+const express = require("express");
+const http = require("http");
+const socketIO = require("socket.io");
+
+const PORT2 = 8001;
+
+
+
+
+/* ****************************************************** */
+
 
 
 // EXPORTS

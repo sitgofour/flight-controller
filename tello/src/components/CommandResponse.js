@@ -21,7 +21,7 @@ class CommandResponse extends Component {
     render() {
         return(
             <div>
-                Command Response
+                <h2>Command Response</h2>
             </div>
         )
     }

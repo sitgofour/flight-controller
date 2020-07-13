@@ -4,7 +4,8 @@ const PORT = 5000;
 const tello = require('./tello.js');
 // const telloState = require('./telloStateStream');
 const cors = require('cors');
- 
+
+
 app.use(express.json());
 app.use(cors());
 
@@ -21,6 +22,3 @@ app.post('/', function (req, res) {
 app.listen(PORT, function() {
     console.log(`Server listening on port: ${PORT}`);
 });
-
-
-

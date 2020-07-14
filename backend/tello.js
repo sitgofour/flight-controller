@@ -16,6 +16,11 @@ tello.on("error", function (err) {
   
   tello.on("message", function (msg, rinfo) {
     setTimeout(function() {
+
+        // ON Command response from tello,
+        // emit message to react client
+        socket.emit('commandResponse', msg);
+
         console.log("server got: " + msg + " from " +
         rinfo.address + ":" + rinfo.port);
     }, 5000);
@@ -96,11 +101,20 @@ telloState.bind(8890);
 const express = require("express");
 const http = require("http");
 const socketIO = require("socket.io");
-
 const PORT2 = 8001;
 
 
+const server = http.createServer((req, res) => {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.write('From server evan');
+  res.end();
+}).listen(PORT2);
 
+const socket = socketIO(server);
+
+socket.on('connect', socket => {
+  console.log('connected to socket on 8001');
+});
 
 /* ****************************************************** */
 

@@ -10,6 +10,9 @@ import styles from '../styles/flightController.module.css';
 class FlightController extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            statusTxt: ""
+        }
 
         this.flightCommand = this.flightCommand.bind(this);
     }
@@ -21,6 +24,9 @@ class FlightController extends Component {
         })
             .then(res => {
                 console.log(res);
+                let status = res.statusText;
+                console.log("status_text: " + status);
+                this.setState({statusTxt: "status"})
             })
             .catch(error => {
                 console.log(`error issuing command: ${error}`);
@@ -40,6 +46,9 @@ class FlightController extends Component {
                 <DirectionPad flightCommand={this.flightCommand} />
                 <div className={styles.Emergency}>
                     <FlightButton className={styles.Emergency} flightCommand={this.flightCommand} command="emergency" />
+                </div>
+                <div>
+                    <p>{this.statusTxt}</p>
                 </div>
             </div>
         );

@@ -6,7 +6,10 @@ const HOST = "http://127.0.0.1:8001";
 const telloResSocket = io(HOST);
 
 telloResSocket.on("commandResponse", data => {
-    console.log("tello responded with " + data);
+    let dataView = new DataView(data);
+    let decoder = new TextDecoder('utf-8');
+    let decodedString = decoder.decode(dataView);
+    console.log("tello responded with " + decodedString);
 })
 
 class CommandResponse extends Component {

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import FlightButton from './FlightButton';
+import FlightData from './FlightData';
 import axios from 'axios';
 import DirectionPad from './DirectionPad';
 import FlipPad from './FlipPad';
@@ -11,7 +12,7 @@ class FlightController extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            statusTxt: ""
+            statusText: "status text here"
         }
 
         this.flightCommand = this.flightCommand.bind(this);
@@ -24,9 +25,8 @@ class FlightController extends Component {
         })
             .then(res => {
                 console.log(res);
-                let status = res.statusText;
-                console.log("status_text: " + status);
-                this.setState({statusTxt: "status"})
+                let statusText = res.statusText;
+                this.setState({statusText: statusText})
             })
             .catch(error => {
                 console.log(`error issuing command: ${error}`);
@@ -47,9 +47,9 @@ class FlightController extends Component {
                 <div className={styles.Emergency}>
                     <FlightButton className={styles.Emergency} flightCommand={this.flightCommand} command="emergency" />
                 </div>
-                <div>
-                    <p>{this.statusTxt}</p>
-                </div>
+                <FlightData 
+                    statusText={this.state.statusText}
+                />
             </div>
         );
     }

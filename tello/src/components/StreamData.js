@@ -11,14 +11,16 @@ class StreamData extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            telloData: "Data",
+            telloData: ["data"],
         }
         telloDataSocket((data) => {
             let dataView = new DataView(data);
             let decoder = new TextDecoder("utf-8");
             let newData = decoder.decode(dataView);
+            let dataArr = newData.split(";");
+            console.log(dataArr);
             this.setState({
-                telloData: newData
+                telloData: dataArr
             });
         });
     }
@@ -29,7 +31,9 @@ class StreamData extends Component {
         return (
             <div>
                 <h2>Stream data</h2>
-                <p>{this.state.telloData}</p>
+                <div>
+                    {this.state.telloData.map(str => <p>{str}</p>)}
+                </div>
             </div>
         )
     }

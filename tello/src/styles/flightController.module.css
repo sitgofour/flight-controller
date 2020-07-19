@@ -1,3 +1,12 @@
+.ControllerWrapper {
+    
+}
+
+.SubWrapper {
+    display: flex;
+    background-color: cadetblue;
+}
+
 .FlightController {
     background-color: navy;
     display: flex;
@@ -15,10 +24,6 @@
     display: flex;
     justify-content: center;
     background-color: greenyellow;    
-}
-
-.ControlTitle {
-    align-self: center;
 }
 
 .FlightData {

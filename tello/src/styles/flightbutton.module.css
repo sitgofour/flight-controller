@@ -1,4 +1,13 @@
 .FlightButton {
     max-width: 150px;
-    background-color: aqua;
+}
+
+.button {
+    text-transform: uppercase;
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 1em;
+    margin: 1em;
 }

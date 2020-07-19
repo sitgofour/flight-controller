@@ -36,21 +36,31 @@ class FlightController extends Component {
 
     render() {
         return (
-            <div className={styles.FlightController}>
-                <h1 className={styles.ControlTitle}>Flight Controls</h1>
-                <div className={styles.FlightStatus}>
-                    <FlightButton flightCommand={this.flightCommand} command="command" buttonText="Flight Status?"/>
+            <div className={styles.ControllerWrapper}>
+
+                <div className={styles.SubWrapper}>    
+                    <div className={styles.FlightController}>
+                        <div className={styles.FlightStatus}>
+                            <FlightButton flightCommand={this.flightCommand} command="command" buttonText="Flight Status?"/>
+                        </div>
+                        <TakeOffLand flightCommand={this.flightCommand} />
+                        <FlipPad flightCommand={this.flightCommand} />
+                    </div>
+                <div>
+                    <DirectionPad flightCommand={this.flightCommand} />
                 </div>
-                <TakeOffLand flightCommand={this.flightCommand} />
-                <FlipPad flightCommand={this.flightCommand} />
-                <DirectionPad flightCommand={this.flightCommand} />
-                <div className={styles.Emergency}>
-                    <FlightButton className={styles.Emergency} flightCommand={this.flightCommand} command="emergency" />
                 </div>
-                <FlightData 
-                    statusText={this.state.statusText}
-                    className={styles.FlightData}
-                />
+
+                <div>
+                    <div className={styles.Emergency}>
+                        <FlightButton className={styles.Emergency} flightCommand={this.flightCommand} command="emergency" />
+                    </div>
+                    <FlightData 
+                        statusText={this.state.statusText}
+                        className={styles.FlightData}
+                    />
+                </div>
+                
             </div>
         );
     }

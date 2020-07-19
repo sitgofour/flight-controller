@@ -12,7 +12,7 @@ class FlightController extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            statusText: "status text here"
+            statusText: "Waiting For Command"
         }
 
         this.flightCommand = this.flightCommand.bind(this);

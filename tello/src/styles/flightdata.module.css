@@ -1,0 +1,8 @@
+.FlightData {
+    display: flex;
+    justify-content: center;
+}
+
+.FlightDataH3 {
+    text-transform: uppercase;
+}

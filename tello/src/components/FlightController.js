@@ -37,7 +37,7 @@ class FlightController extends Component {
     render() {
         return (
             <div className={styles.FlightController}>
-                <h1>Flight Controls</h1>
+                <h1 className={styles.ControlTitle}>Flight Controls</h1>
                 <div className={styles.FlightStatus}>
                     <FlightButton flightCommand={this.flightCommand} command="command" buttonText="Flight Status?"/>
                 </div>
@@ -49,6 +49,7 @@ class FlightController extends Component {
                 </div>
                 <FlightData 
                     statusText={this.state.statusText}
+                    className={styles.FlightData}
                 />
             </div>
         );

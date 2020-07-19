@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import styles from '../styles/flightdata.module.css';
 
 
 class FlightData extends Component {
@@ -11,8 +11,8 @@ class FlightData extends Component {
 
     render() {
         return(
-            <div>
-                <h3>Flight Status: {this.props.statusText}</h3>
+            <div className={styles.FlightData}>
+                <h3 className={styles.FlightDataH3}>Flight Status: {this.props.statusText}</h3>
             </div>
         )
     }

@@ -1,5 +1,7 @@
 .FlightController {
     background-color: navy;
+    display: flex;
+    flex-direction: column;
 }
 
 .Emergency {
@@ -13,4 +15,12 @@
     display: flex;
     justify-content: center;
     background-color: greenyellow;    
+}
+
+.ControlTitle {
+    align-self: center;
+}
+
+.FlightData {
+    align-self: center;
 }

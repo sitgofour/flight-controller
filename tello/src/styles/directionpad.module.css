@@ -1,9 +1,10 @@
 .DirectionPad {
     background-color: blueviolet;
+    border-radius: 15px;
 }
 
 .Directions {
-    background-color: rgb(255, 127, 217);
+    /* background-color: rgb(255, 127, 217); */
     display: flex;
     justify-content: space-evenly;
     align-items: center;

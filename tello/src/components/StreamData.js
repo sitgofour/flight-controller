@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import socketIOClient from "socket.io-client";
+import FlightInfoDataPoint from './FlightInfoDataPoint';
 const socket = socketIOClient('http://localhost:8001/');
 
 function telloDataSocket(cb) {
@@ -32,7 +33,7 @@ class StreamData extends Component {
             <div>
                 <h2>Stream data</h2>
                 <div>
-                    {this.state.telloData.map(str => <p>{str}</p>)}
+                    {this.state.telloData.map(str => <FlightInfoDataPoint dataPoint={str}/>)}
                 </div>
             </div>
         )
